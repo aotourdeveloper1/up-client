@@ -1,0 +1,74 @@
+<header class="header">
+    <picture class="header__logo">
+        <img [src]="logo" alt="" routerLink="/home">
+    </picture>
+    <ng-container *ngIf="windowWidth >= 972">
+        <nav class="header__nav">
+            <ul class="header__nav-list">
+                <li class="header__nav-item" routerLink="/home" routerLinkActive="header__item-active">Home</li>
+                <li class="header__nav-item" routerLink="/us" routerLinkActive="header__item-active">Nosotros</li>
+                <li class="header__nav-item" routerLink="/portals" routerLinkActive="header__item-active">Upnet for you
+                </li>
+                <li class="header__nav-item" routerLink="/polices" routerLinkActive="header__item-active">Politicas</li>
+                <li class="header__nav-item" routerLink="/contact" routerLinkActive="header__item-active">Contacto</li>
+                <li class="header__nav-item">
+                    <a href="https://pqr-client.upnetweb.com/" target="_blank">
+                        PQR
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <button class="header__button" routerLink="/driver"
+            [ngStyle]="{'background-color': botonFondo, 'box-shadow': shadow}">
+            Conduce con nosotros
+        </button>
+    </ng-container>
+
+    <ng-container *ngIf="windowWidth < 972">
+        <section class="nav__opciones">
+            <img (click)="isVisibleNav = !isVisibleNav" *ngIf="botonFondo == '#db4403'; else menuWhite"
+                src="../../../../assets/images/navbar/menu-orange.svg" alt="">
+            <ng-template #menuWhite>
+                <img (click)="isVisibleNav = !isVisibleNav" src="../../../../assets/images/navbar/menu-white.svg"
+                    alt="">
+            </ng-template>
+            <section class="header__nav" *ngIf="isVisibleNav"
+                [ngStyle]="{'background-color': (botonFondo == '#db4403' ? '#e04403' : '#fff')}">
+                <nav class="header__nav-menu">
+                    <ul class="header__nav-list">
+                        <li class="header__nav-item"
+                            [ngStyle]="{'color': (botonFondo == '#db4403' ? '#E3F5FF' : '#db4403')}" routerLink="/home"
+                            routerLinkActive="header__item-active">Home</li>
+                        <li class="header__nav-item"
+                            [ngStyle]="{'color': (botonFondo == '#db4403' ? '#E3F5FF' : '#db4403')}" routerLink="/us"
+                            routerLinkActive="header__item-active">Nosotros
+                        </li>
+                        <li class="header__nav-item"
+                            [ngStyle]="{'color': (botonFondo == '#db4403' ? '#E3F5FF' : '#db4403')}"
+                            routerLink="/portals" routerLinkActive="header__item-active">Upnet
+                            for you
+                        </li>
+                        <li class="header__nav-item"
+                            [ngStyle]="{'color': (botonFondo == '#db4403' ? '#E3F5FF' : '#db4403')}"
+                            routerLink="/polices" routerLinkActive="header__item-active">
+                            Politicas</li>
+                        <li class="header__nav-item"
+                            [ngStyle]="{'color': (botonFondo == '#db4403' ? '#E3F5FF' : '#db4403')}"
+                            routerLink="/contact" routerLinkActive="header__item-active">
+                            Contacto</li>
+                        <li class="header__nav-item"
+                            [ngStyle]="{'color': (botonFondo == '#db4403' ? '#E3F5FF' : '#db4403')}"
+                            routerLink="/driver" routerLinkActive="header__item-active">
+                            Conduce con nosotros</li>
+                    </ul>
+                    <img *ngIf="botonFondo == '#db4403'" src="../../../../assets/images/navbar/flecha.svg" alt=""
+                        (click)="isVisibleNav = !isVisibleNav">
+                    <img *ngIf="botonFondo != '#db4403'" src="../../../../assets/images/navbar/flecha-orange.svg" alt=""
+                        (click)="isVisibleNav = !isVisibleNav">
+                </nav>
+            </section>
+        </section>
+    </ng-container>
+
+</header>

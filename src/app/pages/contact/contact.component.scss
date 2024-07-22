@@ -1,0 +1,152 @@
+.contactanos {
+  // padding: 0 90px;
+  padding: 22px;
+  min-height: 1060px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contactanos__title {
+  font-family: Poppins;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  color: #db4403;
+  // margin-top: 0;
+
+  .contactanos__title-black {
+    color: #232323;
+  }
+}
+
+.contactanos__description {
+  margin-top: -20px;
+  font-family: Poppins;
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 25px;
+  text-align: center;
+  color: #232323;
+  margin-bottom: 60px;
+}
+
+.contactanos__form {
+  width: 100%;
+  padding: 40px 20px 20px;
+  min-height: 580px;
+  border-radius: 20px;
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  .contactanos__content-input {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+    margin-bottom: 12px;
+
+    div {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      label {
+        font-family: Poppins;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: -0.02em;
+        text-align: left;
+        color: #232323;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        height: 45px;
+        border-radius: 10px;
+        opacity: 0px;
+        background-color: #f2f2f2;
+
+        font-family: Poppins;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 24px;
+        padding: 0 12px;
+        letter-spacing: -0.02em;
+        text-align: left;
+        color: #bdbdbd;
+        outline: none;
+        border: none;
+
+        &::placeholder {
+          font-family: Poppins;
+          font-size: 14px;
+          font-weight: 500;
+          padding: 0 12px;
+          letter-spacing: -0.02em;
+          text-align: left;
+          color: #bdbdbd;
+        }
+      }
+
+      textarea {
+        height: auto;
+        padding: 12px 12px;
+
+        &::placeholder {
+          padding: 12px 12px;
+        }
+      }
+    }
+  }
+
+  button {
+    margin-top: 22px;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color: #db4403;
+
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 30px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 992px) {
+  .contactanos {
+    padding: 0 90px;
+  }
+
+  .contactanos__title {
+    width: 50%;
+    line-height: 60px;
+    font-size: 58px;
+  }
+
+  .contactanos__description {
+    font-size: 14px;
+  }
+
+  .contactanos__form {
+    padding: 60px 60px 20px;
+    min-height: 580px;
+
+    button {
+      width: 499px;
+    }
+  }
+}

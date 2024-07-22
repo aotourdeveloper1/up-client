@@ -1,0 +1,396 @@
+.portada {
+  height: 325px;
+  background-color: #db4403;
+
+  picture {
+    width: 100%;
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.content__us {
+  min-height: 625px;
+  width: 100%;
+  padding: 22px;
+  // padding: 0 150px;
+  background-color: white;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  // padding-top: 248px;
+  .content__text {
+    font-family: Poppins;
+    // font-size: 26px;
+    font-size: 0.7rem;
+    font-weight: 400;
+    line-height: 17px;
+    text-align: center;
+    color: #232323;
+  }
+}
+
+//  MISION Y VISION
+.mision {
+  min-height: 520px;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+  .general__content-der {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    .general__content-img,
+    .vision__content-img {
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .general__content-izq {
+    width: 100%;
+    .general__izq-title {
+      font-family: Poppins;
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 55px;
+      letter-spacing: -0.045em;
+      text-align: center;
+      color: #232323;
+    }
+
+    .general__izq-paragraph {
+      font-family: Poppins;
+      font-size: 0.9rem;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: -0.01em;
+      text-align: center;
+      color: #232323;
+    }
+
+    .general__izq-img {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// CERTIFICACIONES
+.certificaciones {
+  min-height: 360px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .certificaciones__title {
+    font-family: Poppins;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 57px;
+    text-align: center;
+    color: #232323;
+  }
+
+  .certificaciones__content {
+    display: flex;
+    justify-content: center;
+    .certificaciones__content-img {
+      width: 80%;
+    }
+  }
+}
+
+// VALORES CORPORATIVOS
+.valores {
+  padding: 22px;
+  min-height: 720px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .valores__title {
+    font-family: Poppins;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 57px;
+    text-align: center;
+    color: #232323;
+
+    .valores__title-orange {
+      color: #db4403;
+    }
+  }
+}
+
+.valores__content {
+  margin-top: 120px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(389px, 1fr));
+  gap: 148px;
+  place-items: center;
+}
+
+.valores__content-card {
+  padding: 0px 40px;
+  width: 389px;
+  height: 350px;
+  border-radius: 20px;
+  background-color: white;
+  position: relative;
+
+  .valores__card-img {
+    position: absolute;
+    width: 205px;
+    height: 205px;
+    background-color: #db4403;
+    border-radius: 100%;
+    top: -100px;
+    left: 95px;
+  }
+
+  .valores__card-title {
+    margin-top: 120px;
+    font-family: Poppins;
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 25px;
+    text-align: center;
+    color: #232323;
+  }
+
+  .valores__card-paragraph {
+    font-family: Poppins;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 25px;
+    text-align: center;
+    color: #8d8d8d;
+  }
+}
+
+// TESTIMONIOS
+.testimonios {
+  padding: 22px;
+  min-height: 460px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+
+  .testimonios__title {
+    font-family: Poppins;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 57px;
+    text-align: center;
+    color: #232323;
+  }
+}
+
+.testimonios__content {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(390px, 1fr));
+  gap: 48px;
+  place-items: center;
+}
+
+.testimonios__content-card {
+  width: 390px;
+  height: 240px;
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  opacity: 0px;
+  background-color: white;
+  box-shadow: 0px 0px 40px 0px #2323231a;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+
+  .testimonios__card-img {
+    img {
+      width: 40px;
+    }
+  }
+
+  .testimonios__card-paragraph {
+    font-family: Inter;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 25.6px;
+    text-align: left;
+    margin: 0;
+  }
+}
+
+.testimonios__card-info {
+  display: flex;
+  gap: 12px;
+  .testimonios__info-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+    }
+  }
+
+  .testimonios__info-desc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .testimonios__desc-name,
+    .testimonios__desc-rank {
+      font-family: Poppins;
+      font-size: 0.9rem;
+      font-weight: 600;
+      line-height: 28.8px;
+      text-align: left;
+    }
+    .testimonios__desc-rank {
+      font-weight: 400;
+    }
+  }
+}
+
+.testimonios__paginador {
+  margin-top: 32px;
+  img {
+    width: 90px;
+  }
+}
+
+.ocultar {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .ocultar {
+    display: inline-block;
+  }
+  .portada {
+    height: 720px;
+  }
+
+  .content__us {
+    min-height: 625px;
+    padding: 0 150px;
+  }
+
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding-top: 100px;
+    .content__text {
+      font-family: Poppins;
+      font-size: 26px;
+      font-weight: 400;
+      line-height: 17px;
+      text-align: center;
+      color: #232323;
+    }
+  }
+  //  MISION Y VISION
+  .mision {
+    min-height: 720px;
+    flex-direction: row;
+    .general__content-der {
+      display: flex;
+      justify-content: flex-end;
+      width: 40%;
+      .general__content-img,
+      .vision__content-img {
+        img {
+          width: 85%;
+        }
+      }
+    }
+
+    .general__content-izq {
+      width: 60%;
+      .general__izq-title {
+        font-size: 40px;
+        text-align: left;
+      }
+
+      .general__izq-paragraph {
+        font-size: 14px;
+        text-align: left;
+      }
+
+      .general__izq-img {
+        img {
+          width: 85%;
+        }
+      }
+    }
+  }
+
+  // VALORES CORPORATIVOS
+  .valores {
+    .valores__title {
+      font-size: 40px;
+      text-align: center;
+    }
+  }
+
+  .valores__content {
+    gap: 0px;
+  }
+
+  .testimonios {
+    .testimonios__title {
+      font-size: 40px;
+      text-align: center;
+    }
+  }
+
+  .testimonios__content {
+    gap: 0px;
+  }
+
+  .testimonios__content-card {
+    .testimonios__card-paragraph {
+      font-size: 14px;
+      text-align: left;
+    }
+  }
+
+  .testimonios__card-info {
+    .testimonios__info-img {
+      .testimonios__info-desc {
+        .testimonios__desc-name,
+        .testimonios__desc-rank {
+          font-size: 14px;
+          text-align: left;
+        }
+      }
+    }
+  }
+}

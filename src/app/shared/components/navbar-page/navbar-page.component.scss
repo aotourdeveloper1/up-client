@@ -1,0 +1,125 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // padding: 40px 60px 20px;
+  padding: 22px;
+}
+
+.header__logo {
+  img {
+    // width: 200px;
+    width: 130px;
+    cursor: pointer;
+  }
+}
+
+.header__nav {
+  background-color: white;
+  height: 75px;
+  border-radius: 20px;
+  padding: 15px;
+
+  display: flex;
+  align-items: center;
+
+  .header__nav-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+    width: 100%;
+    padding: 10px 20px;
+
+    .header__nav-item,
+    a {
+      font-family: Poppins;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 30px;
+      color: #aaaaaa;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .header__item-active {
+      color: #db4403;
+      font-family: Poppins;
+      font-weight: 700;
+      line-height: 30px;
+    }
+  }
+}
+
+.header__button {
+  width: 210px;
+  // background-color: #db4403;
+  // box-shadow: 0px 17px 33px 0px #ffcbb5;
+  height: 54px;
+  border-radius: 10px;
+  opacity: 0px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+
+  //   FUENTE
+  color: white;
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: center;
+}
+
+.nav__opciones {
+  position: relative;
+
+  .header__nav {
+    width: 260px;
+    height: 300px;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #e04403;
+    z-index: 100;
+  }
+
+  .header__nav-menu {
+    width: 100%;
+    position: relative;
+
+    img {
+      position: absolute;
+      top: 35px;
+      right: 10px;
+      z-index: 1000;
+      cursor: pointer;
+    }
+
+    .header__nav-list {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+      width: 100%;
+      padding: 10px 20px;
+
+      .header__nav-item,
+      a {
+        font-family: Poppins;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 30px;
+        color: #e3f5ff;
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+      .header__item-active {
+        font-family: Poppins;
+        font-weight: 700;
+        line-height: 30px;
+      }
+    }
+  }
+}

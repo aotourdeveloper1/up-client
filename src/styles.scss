@@ -1,1 +1,108 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
+@font-face {
+  font-family: "Sansation";
+  src: url("./assets/fonts/Sansation_Regular.ttf");
+}
+
+* {
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f0f0f0;
+  position: relative;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  /* Deshabilitar la selección de texto en toda la página */
+  user-select: none;
+}
+
+/* scroll */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 7.5px;
+  display: block;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 100rem;
+  background-color: #c1c1c1;
+}
+
+.p-accordion .p-accordion-header .p-accordion-header-link {
+  padding: 1.25rem;
+  border: none;
+  border-top: 1px solid #00000033;
+  color: #232323;
+  font-size: 14px;
+  font-family: Poppins;
+  background: transparent;
+  font-weight: 400;
+  border-radius: 0;
+  transition: box-shadow 0.2s;
+}
+
+.p-accordion .p-accordion-content {
+  padding: 1.25rem;
+  border: none;
+  background: transparent;
+  color: #232323;
+  border: none;
+}
+
+.p-accordion
+  .p-accordion-header:not(.p-disabled)
+  .p-accordion-header-link:focus {
+  outline: 0 none;
+  outline-offset: 0;
+  background: transparent;
+  border: none;
+  border-top: 1px solid #00000033;
+  box-shadow: none;
+}
+
+.p-accordion
+  .p-accordion-header
+  .p-accordion-header-link
+  .p-accordion-toggle-icon {
+  margin-right: 0.5rem;
+  display: none;
+}
+
+.p-accordion
+  .p-accordion-header:not(.p-disabled).p-highlight:hover
+  .p-accordion-header-link {
+  border: none;
+  border-bottom: 1px solid #00000033;
+  background: transparent;
+  color: #232323;
+}
+
+.p-accordion
+  .p-accordion-header:not(.p-disabled).p-highlight
+  .p-accordion-header-link {
+  border: none;
+  border-bottom: 1px solid #00000033;
+  background: transparent;
+  color: #232323;
+}
+
+.p-accordion
+  .p-accordion-header:not(.p-highlight):not(.p-disabled):hover
+  .p-accordion-header-link {
+  background: #dee2e6;
+  color: #343a40;
+  border: none;
+}
