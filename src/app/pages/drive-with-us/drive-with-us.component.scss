@@ -48,10 +48,12 @@
 
 .portada__additional {
   width: 100%;
+  display: flex;
   position: absolute;
-  left: 57%;
-  top: 130%;
-  transform: translate(-50%, -50%);
+  left: 0;
+  top: 64%;
+  /* transform: translate(-50%, -50%); */
+  justify-content: end;
 
   picture {
     img {
