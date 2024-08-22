@@ -1,101 +1,111 @@
-<footer class="footer" [ngStyle]="{'height': height +'px'}">
+<footer class="footer" [ngStyle]="{ height: height + 'px' }">
+  <!-- SECTION DE DESCARGA TU APLICACIÓN -->
+  <section class="footer__banner" *ngIf="isVisibleBanner">
+    <section class="footer__banner-content">
+      <h3 class="footer__content-title">Descarga nuestra aplicación UP</h3>
+      <p class="footer__content-paragraph">
+        <strong>Auto Ocasional Tour</strong> ofrece transporte especial para empresas y
+        particulares a través de nuestra app, disponible en iOS y Android.
+      </p>
 
-    <!-- SECTION DE DESCARGA TU APLICACIÓN -->
-    <section class="footer__banner" *ngIf="isVisibleBanner">
-        <section class="footer__banner-content">
-            <h3 class="footer__content-title">
-                Descarga nuestra
-                aplicación
-            </h3>
-            <p class="footer__content-paragraph">
-                Lorem ipsum dolor sit amet, consectetur adipiscing
-                elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation
-            </p>
+      <div class="footer__picture">
+        <a
+          href="https://play.google.com/store/apps/details?id=com.aotour.cliente"
+          target="_blank"
+        >
+          <img
+            class="portada__image"
+            src="../../../assets/images/home/google-paly.svg"
+            alt=""
+          />
+        </a>
+        <a href="https://apps.apple.com/co/app/up/id1496087652" target="_blank">
+          <img
+            class="portada__image"
+            src="../../../assets/images/home/app-store.svg"
+            alt=""
+          />
+        </a>
+      </div>
+    </section>
+    <section class="footer__banner-img">
+      <picture>
+        <img src="../../../../assets/images/home/iPhone 13 Pro.png" alt="" />
+      </picture>
+    </section>
+  </section>
 
-            <div class="footer__picture">
-                <a href="https://play.google.com/store/apps/details?id=com.aotour.cliente" target="_blank">
-                    <img class="portada__image" src="../../../assets/images/home/google-paly.svg" alt="">
-                </a>
-                <a href="https://apps.apple.com/co/app/up/id1496087652" target="_blank">
-                    <img class="portada__image" src="../../../assets/images/home/app-store.svg" alt="">
-                </a>
-            </div>
-        </section>
-        <section class="footer__banner-img">
-            <picture>
-                <img src="../../../../assets/images/home/iPhone 13 Pro.png" alt="">
-            </picture>
-        </section>
+  <section class="footer__content">
+    <section class="footer__block">
+      <picture class="footer__image">
+        <img src="../../../../assets/images/footer/logo.png" alt="" />
+      </picture>
+
+      <picture class="footer__image-group">
+        <img src="../../../../assets/images/footer/twitter.png" alt="" />
+        <img src="../../../../assets/images/footer/facebook.png" alt="" />
+        <img src="../../../../assets/images/footer/instagram.png" alt="" />
+      </picture>
+
+      <div class="footer__form">
+        <label class="footer__label" for=""
+          >Sign up for personalized offers</label
+        >
+        <div class="footer__form-group">
+          <input
+            class="footer__input"
+            placeholder="Enter your email"
+            type="text"
+          />
+          <div class="footer__button-image">
+            <img src="../../../../assets/images/footer/send.svg" alt="" />
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="footer__content">
-        <section class="footer__block">
-            <picture class="footer__image">
-                <img src="../../../../assets/images/footer/logo.png" alt="">
-            </picture>
-
-            <picture class="footer__image-group">
-                <img src="../../../../assets/images/footer/twitter.png" alt="">
-                <img src="../../../../assets/images/footer/facebook.png" alt="">
-                <img src="../../../../assets/images/footer/instagram.png" alt="">
-            </picture>
-
-            <div class="footer__form">
-                <label class="footer__label" for="">Sign up for personalized offers</label>
-                <div class="footer__form-group">
-                    <input class="footer__input" placeholder="Enter your email" type="text">
-                    <div class="footer__button-image">
-                        <img src="../../../../assets/images/footer/send.svg" alt="">
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section class="footer__nav-section"  *ngIf="windowWidth >= 972">
-            <nav class="footer__nav">
-                <ul class="footer__nav-list">
-                    <li class="footer__nav-item item-cabecera">Links</li>
-                    <li class="footer__nav-item">Home</li>
-                    <li class="footer__nav-item">Nosotros</li>
-                    <li class="footer__nav-item">Portales</li>
-                    <li class="footer__nav-item">Politicas</li>
-                </ul>
-            </nav>
-            <nav class="footer__nav">
-                <ul class="footer__nav-list">
-                    <li class="footer__nav-item item-cabecera">Politicas</li>
-                    <li class="footer__nav-item">About Us</li>
-                    <li class="footer__nav-item">Instructions</li>
-                    <li class="footer__nav-item">Catelog</li>
-                    <li class="footer__nav-item">Contact Us</li>
-                </ul>
-            </nav>
-            <nav class="footer__nav">
-                <ul class="footer__nav-list">
-                    <li class="footer__nav-item item-cabecera">Contacto</li>
-                    <li class="footer__nav-item">
-                        Bogotá Calle 24 # 7 - 43, Edificio 7/24, Of 802 
-                        <br>
-                        +57 (601) 3585 555
-                        <br>
-                         servicios@aotour.com.co
-                    </li>
-                    <li class="footer__nav-item">
-                        Barranquilla Cra. 53 N° 68B – 87 C.C. Gran Centro Of 1-132 
-                        <br>
-                        +57 (605) 3582 555 / +57 (605) 3582 003
-                    </li>
-                </ul>
-            </nav>
-        </section>
-
+    <section class="footer__nav-section" *ngIf="windowWidth >= 972">
+      <nav class="footer__nav">
+        <ul class="footer__nav-list">
+          <li class="footer__nav-item item-cabecera">Links</li>
+          <li class="footer__nav-item">Home</li>
+          <li class="footer__nav-item">Nosotros</li>
+          <li class="footer__nav-item">Portales</li>
+          <li class="footer__nav-item">Politicas</li>
+        </ul>
+      </nav>
+      <nav class="footer__nav">
+        <ul class="footer__nav-list">
+          <li class="footer__nav-item item-cabecera">Politicas</li>
+          <li class="footer__nav-item">About Us</li>
+          <li class="footer__nav-item">Instructions</li>
+          <li class="footer__nav-item">Catelog</li>
+          <li class="footer__nav-item">Contact Us</li>
+        </ul>
+      </nav>
+      <nav class="footer__nav">
+        <ul class="footer__nav-list">
+          <li class="footer__nav-item item-cabecera">Contacto</li>
+          <li class="footer__nav-item">
+            Bogotá Calle 24 # 7 - 43, Edificio 7/24, Of 802 
+            <br />
+            +57 (601) 3585 555
+            <br />
+             servicios@aotour.com.co
+          </li>
+          <li class="footer__nav-item">
+            Barranquilla Cra. 53 N° 68B – 87 C.C. Gran Centro Of 1-132 
+            <br />
+            +57 (605) 3582 555 / +57 (605) 3582 003
+          </li>
+        </ul>
+      </nav>
     </section>
-    <div class="footer__extra"></div>
-    <section class="footer__section">
-        <span class="footer__span">
-            © Copyright 2024 AOTOUR©. All rights reserved.
-        </span>
-    </section>
+  </section>
+  <div class="footer__extra"></div>
+  <section class="footer__section">
+    <span class="footer__span">
+      © Copyright 2024 AOTOUR©. All rights reserved.
+    </span>
+  </section>
 </footer>
