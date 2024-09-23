@@ -78,7 +78,7 @@
             formControlName="fk_cliente"
             nzPlaceHolder="Seleccione un cliente"
             (ngModelChange)="getConfiguracionCampos()"
-            [nzDisabled]="(clienteSeleccionado != 0)"
+            [nzDisabled]="clienteSeleccionado != 0"
             (nzOnSearch)="searchClient($event)"
           >
             <nz-option
@@ -90,6 +90,20 @@
               [nzValue]="item.id"
               [nzLabel]="item.razonsocial"
               *ngFor="let item of listCentrosCostos"
+            ></nz-option>
+          </nz-select>
+        </div>
+        <div class="contendor__input">
+          <label for="" class="label__title">Sede</label>
+          <nz-select nzShowSearch nzAllowClear formControlName="sede" [nzDisabled]="entidadSeleccionada != 0">
+            <nz-option
+              [nzValue]="undefined"
+              nzLabel="Seleccione una sede"
+            ></nz-option>
+            <nz-option
+              [nzLabel]="item.nombre!"
+              [nzValue]="item.id"
+              *ngFor="let item of entidadList"
             ></nz-option>
           </nz-select>
         </div>
@@ -562,5 +576,10 @@
 </section>
 
 <div class="modal" *ngIf="isVisibleModal">
-  <app-modal [message]="messageModal" [title]="titleModal" [img]="imgModal" (isVisibleModal)="recibirEmit($event)"></app-modal>
+  <app-modal
+    [message]="messageModal"
+    [title]="titleModal"
+    [img]="imgModal"
+    (isVisibleModal)="recibirEmit($event)"
+  ></app-modal>
 </div>

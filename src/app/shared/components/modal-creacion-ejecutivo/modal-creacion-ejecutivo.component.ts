@@ -89,6 +89,9 @@ export class ModalCreacionEjecutivoComponent {
   // LISTADOS DE TODOS LOS SELECT DEL FORMULARIO
   listCiudades: any[] = [];
 
+  // LISTADO DE ENTIDADES
+  entidadList: any[] = [];
+
   // ALMACENAMOS LOS PASAJEROS QUE VAN A USAR EL SERVICIO QUE SE ESTA CREANDO
   pasajeros: any[] = [];
   listIndicativos: any[] = this._utilService.getContryHas();
@@ -142,7 +145,7 @@ export class ModalCreacionEjecutivoComponent {
       campo3: [''],
       campo4: [''],
       campo5: [''],
-      sede: [this.entidadSeleccionada],
+      sede: ['', [Validators.required]],
       centrodecosto: [''], //sólo si es aviatur
       vuelo: [''],
       detalles: ['', [Validators.required]],
@@ -157,8 +160,7 @@ export class ModalCreacionEjecutivoComponent {
     this._httpService.apiUrl = environment.url;
     await this.getCentroCosto();
     await this.getCiudades();
-
-    // this.initMap();
+    await this.getLocalidades();
   }
 
   enabledCampo() {
@@ -401,11 +403,14 @@ export class ModalCreacionEjecutivoComponent {
     this.listOrdenServicio.push(json);
 
     this.tagSeleccionadoMet({ id: 4 });
+
     this.clienteSeleccionado = this.formServicios.get('fk_cliente')?.value;
+    this.entidadSeleccionada = this.formServicios.get('sede')?.value;
 
     this.formServicios.reset();
     this.pasajeros.length = 0;
 
+    this.formServicios.get('sede')?.setValue(this.entidadSeleccionada);
     this.formServicios.get('fk_cliente')?.setValue(this.clienteSeleccionado);
   }
 
@@ -618,6 +623,20 @@ export class ModalCreacionEjecutivoComponent {
       this.initMapUntilDefined();
     }
     this.tagActivo = item.id;
+  }
+
+  // HTTP
+  async getLocalidades() {
+    await this._httpImplService
+      .guardar('listentity', {})
+      .then((value: any) => {
+        if (value.response) {
+          this.entidadList = value.entities;
+        }
+      })
+      .catch((reason) => {
+        console.log(reason);
+      });
   }
 
   async getCentroCosto() {
