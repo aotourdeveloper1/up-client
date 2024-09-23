@@ -106,8 +106,7 @@ export class ModalCreacionEjecutivoComponent {
   /** Visibilidad del modal de resultados. */
   isVisibleModal: boolean = false;
   /** Imagen del modal de resultados. */
-  imgModal: string =
-    '.../../../../../../../../../../../assets/imgs/satisfactorio.png';
+  imgModal: string = '.../../../../../../assets/images/modal/satisfactorio.png';
   /** Título del modal de resultados. */
   titleModal: string = '¡Viaje exitoso!';
   /** Mensaje del modal de resultados. */
@@ -163,46 +162,34 @@ export class ModalCreacionEjecutivoComponent {
   }
 
   enabledCampo() {
-    if (
-      this.consultConfiguracion[0].exped == "0"
-    ) {
+    if (this.consultConfiguracion[0].exped == '0') {
       this.formServicios.get('centrodecosto')?.clearValidators();
       this.formServicios.get('centrodecosto')?.updateValueAndValidity();
     }
-    if (
-      !this.consultConfiguracion[0].campo1
-    ) {
+    if (!this.consultConfiguracion[0].campo1) {
       this.formServicios.get('campo1')?.clearValidators();
       this.formServicios.get('campo1')?.updateValueAndValidity();
     }
-    if (
-      !this.consultConfiguracion[0].campo2
-    ) {
+    if (!this.consultConfiguracion[0].campo2) {
       this.formServicios.get('campo2')?.clearValidators();
       this.formServicios.get('campo2')?.updateValueAndValidity();
     }
-    if (
-      !this.consultConfiguracion[0].campo3
-    ) {
+    if (!this.consultConfiguracion[0].campo3) {
       this.formServicios.get('campo3')?.clearValidators();
       this.formServicios.get('campo3')?.updateValueAndValidity();
     }
-    if (
-      !this.consultConfiguracion[0].campo4
-    ) {
+    if (!this.consultConfiguracion[0].campo4) {
       this.formServicios.get('campo4')?.clearValidators();
       this.formServicios.get('campo4')?.updateValueAndValidity();
     }
-    if (
-      !this.consultConfiguracion[0].campo5
-    ) {
+    if (!this.consultConfiguracion[0].campo5) {
       this.formServicios.get('campo5')?.clearValidators();
       this.formServicios.get('campo5')?.updateValueAndValidity();
     }
   }
 
   disabledCampo() {
-    if (this.consultConfiguracion[0].exped != "0") {
+    if (this.consultConfiguracion[0].exped != '0') {
       this.formServicios
         .get('centrodecosto')
         ?.addValidators(Validators.required);
@@ -383,7 +370,7 @@ export class ModalCreacionEjecutivoComponent {
     this.formServicios.get('desde')?.setValue(this.destinosList[0].direccion);
     this.formServicios.get('hasta')?.setValue(this.destinosList[1].direccion);
 
-    console.log(this.formServicios.value)
+    console.log(this.formServicios.value);
     if (this.formServicios.invalid) {
       this.message.info(
         'No es posible acceder a esta sección, debe llenar todos los campos de programación de viaje '
@@ -414,12 +401,12 @@ export class ModalCreacionEjecutivoComponent {
     this.listOrdenServicio.push(json);
 
     this.tagSeleccionadoMet({ id: 4 });
-    this.clienteSeleccionado = this.formServicios.get("fk_cliente")?.value;
+    this.clienteSeleccionado = this.formServicios.get('fk_cliente')?.value;
 
     this.formServicios.reset();
     this.pasajeros.length = 0;
 
-    this.formServicios.get("fk_cliente")?.setValue(this.clienteSeleccionado);
+    this.formServicios.get('fk_cliente')?.setValue(this.clienteSeleccionado);
   }
 
   drop(event: CdkDragDrop<string[]>) {
@@ -646,10 +633,10 @@ export class ModalCreacionEjecutivoComponent {
   }
 
   async getConfiguracionCampos() {
-    if (this.formServicios.get("fk_cliente")?.value) {
+    if (this.formServicios.get('fk_cliente')?.value) {
       await this._httpImplService
         .guardar('client/consultclient', {
-          cliente: this.formServicios.get("fk_cliente")?.value,
+          cliente: this.formServicios.get('fk_cliente')?.value,
         })
         .then((value: any) => {
           this.consultConfiguracion = value.consulta;
@@ -686,22 +673,20 @@ export class ModalCreacionEjecutivoComponent {
       .guardar('client/requesttrips', json)
       .then((value: any) => {
         if (value.response) {
-          this.acciones = true;
           this.isVisibleModal = true;
           /** Imagen del modal de resultados. */
           this.imgModal =
-            '.../../../../../../../../../../../assets/imgs/satisfactorio.png';
+            '.../../../../../../assets/images/modal/satisfactorio.png';
           /** Título del modal de resultados. */
           this.titleModal = '¡Viaje exitoso!';
           /** Mensaje del modal de resultados. */
           this.messageModal =
-            'La solicitud de los viajes se ha realizado correctamente en el apartado de viajes no programados los puede visualizar, de click en aceptar para ir a visualizar los viajes no programados';
+            'La solicitud de los viajes se ha realizado correctamente';
         } else {
-          this.acciones = false;
           this.isVisibleModal = true;
           /** Imagen del modal de resultados. */
           this.imgModal =
-            '.../../../../../../../../../../../assets/imgs/informacion.png';
+            '.../../../../../../assets/images/modal/informacion.png';
           /** Título del modal de resultados. */
           this.titleModal = '¡Viaje no programado!';
           /** Mensaje del modal de resultados. */

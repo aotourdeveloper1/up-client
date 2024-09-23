@@ -1,0 +1,44 @@
+<section>
+  <button class="close" (click)="emmitir()">
+    <img src="../../../../assets/svg/cerrar.svg" alt="" />
+  </button>
+  <picture>
+    <img [src]="img" alt="" />
+  </picture>
+  <div class="contendor__text">
+    <h2>{{ title }}</h2>
+    <span>{{ message }}</span>
+
+    <ng-container *ngIf="timeLeft">
+      <br>
+      <span>{{ 'Quedan ' + timeLeft + ' segundos antes de la desconexión' }}</span>
+    </ng-container>
+  </div>
+
+  <textarea
+    *ngIf="isVisibleObservacion"
+    nz-input
+    rows="4"
+    [(ngModel)]="messageObservacion"
+    [ngModelOptions]="{ standalone: true }"
+    placeholder="Ingrese el motivo por el cual se debe eliminar el servicio"
+  >
+  </textarea>
+
+  <div class="contendor__input" *ngIf="isVisibleNombreLote">
+    <label for="" class="label__title">Nombre del lote</label>
+    <input type="text" class="input__form" [(ngModel)]="nombreLote" />
+  </div>
+
+  <div class="contendor__input" *ngIf="isVisibleAbono">
+    <label for="" class="label__title">Abono del prestamo</label>
+    <input type="number" class="input__form" [(ngModel)]="abono" />
+  </div>
+
+  <div class="contenedor__btn" *ngIf="acciones">
+    <button class="btn__si" (click)="emmitirAccion(true)">{{ textYes }}</button>
+    <button class="btn__no" (click)="emmitirAccion(false)">
+      {{ textNot }}
+    </button>
+  </div>
+</section>

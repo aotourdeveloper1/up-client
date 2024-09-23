@@ -560,3 +560,7 @@
     </ng-container>
   </form>
 </section>
+
+<div class="modal" *ngIf="isVisibleModal">
+  <app-modal [message]="messageModal" [title]="titleModal" [img]="imgModal" (isVisibleModal)="recibirEmit($event)"></app-modal>
+</div>

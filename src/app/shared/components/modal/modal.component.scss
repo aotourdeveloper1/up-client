@@ -1,0 +1,102 @@
+@import "../../../../assets/scss/mixin/mixin";
+@import "../../../../assets/scss/propiedades/color";
+
+section {
+  width: 545px;
+  min-height: 450px;
+  flex-shrink: 0;
+  padding: 22px;
+
+  border-radius: 20px;
+  background: #fff;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  position: relative;
+
+  picture {
+    img {
+      width: 280px;
+      height: 220px;
+    }
+  }
+
+  div.contendor__text {
+    display: grid;
+    place-items: center;
+    h2 {
+      color: var(--Principal-color, #e04403);
+      text-align: center;
+      font-family: Sansation;
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      margin-bottom: 5px;
+    }
+
+    span {
+      color: var(--Secundary-color, #232323);
+      text-align: center;
+      font-family: Poppins;
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 24px; /* 150% */
+      letter-spacing: -0.32px;
+    }
+  }
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 34px;
+  height: 34px;
+  border-radius: 18px;
+  flex-shrink: 0;
+  border: none;
+  background-color: #ffeee7;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+div.contenedor__btn {
+  .btn__si,
+  .btn__no {
+    border-radius: 8px;
+    background: var(--Principal-Color, #db4403);
+    min-width: 116px;
+    height: 46px;
+    flex-shrink: 0;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    padding: 0px 12px;
+
+    color: #fff;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .btn__no {
+    background: var(--Secundary-color, #232323);
+  }
+}
+
+.contendor__input {
+  @include flex(flex, column, "", "", 6px);
+  width: 100%;
+}
+
+

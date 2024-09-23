@@ -10,7 +10,7 @@ import { NavbarPageComponent } from './components/navbar-page/navbar-page.compon
 import { ModalCreacionEjecutivoComponent } from './components/modal-creacion-ejecutivo/modal-creacion-ejecutivo.component';
 import { HttpService } from './services/http.service';
 import { HttpImplService } from './services/impl/http-impl.service';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // NG-ZORRO
 import { NzIconModule } from 'ng-zorro-antd/icon';
@@ -51,6 +51,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 // CDK
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { HttpClientModule } from '@angular/common/http';
+import { ModalComponent } from './components/modal/modal.component';
 
 const MODULOS = [
   NzInputModule,
@@ -92,13 +93,15 @@ const MODULOS = [
   // MODULOS
   HttpClientModule,
   // GOOGLE MAPS
-  GoogleMapsModule
+  GoogleMapsModule,
+  FormsModule
 ];
 
 const COMPONENTES = [
   FooterPageComponent,
   NavbarPageComponent,
   ModalCreacionEjecutivoComponent,
+  ModalComponent
 ];
 
 @NgModule({
