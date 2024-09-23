@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class PortalsComponent {
   headerTemplate: string = '';
+
+  isModalVisible: boolean = false;
+
+  // Event
+  recibirCierreModal(event: boolean) {
+    this.isModalVisible = event;
+  }
 }

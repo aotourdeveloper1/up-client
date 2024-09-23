@@ -1,0 +1,108 @@
+@import "../propiedades/_color.scss";
+@import "../mixin/mixin.scss";
+
+.btn__acciones {
+  width: 79px;
+  height: 22px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  padding: 10x 5px;
+
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 12px;
+  position: relative;
+}
+
+.btn__acciones {
+  width: 106px;
+  height: 20px;
+  border-radius: 6px;
+  opacity: 0px;
+  font-weight: 600;
+  position: relative;
+}
+
+.btn__orange,
+.btn__black {
+  border-radius: 8px;
+  background: $orange-background-1;
+  width: 380.84px;
+  height: 46px;
+  flex-shrink: 0;
+  border: none;
+  outline: none;
+
+  color: $white;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+
+  cursor: pointer;
+}
+
+.contenedor__btn-agregar {
+  @include flex(flex, "", "", "", 12px);
+}
+
+.btn__agregar,
+.btn__agregar-green,
+.btn__agregar-red {
+  border-radius: 16px;
+  background: $orange-background-1;
+  width: 180px;
+  height: 46px;
+  flex-shrink: 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  color: $white-title-1;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+  letter-spacing: -0.32px;
+
+  @include flex(flex, "", space-evenly, center, 12px);
+
+  div.contenedor__svg {
+    background-color: $orange-background-2;
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    border-radius: 18px;
+    display: grid;
+    place-items: center;
+  }
+}
+
+.btn__agregar-green {
+  background: $green-background-1;
+  div.contenedor__svg {
+    background-color: $green-background-2;
+  }
+}
+
+.btn__agregar-red {
+  background-color: #d90000ef;
+  div.contenedor__svg {
+  background-color: #d90000d2;
+  }
+}

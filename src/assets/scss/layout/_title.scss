@@ -1,0 +1,27 @@
+.title-group {
+  background-color: white;
+  h2 {
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    color: $orange;
+    @include flex(flex, "", "", center, 6px);
+
+    span {
+      font-family: Poppins;
+      font-size: 12px;
+      font-style: normal;
+      line-height: normal;
+      color: $black;
+    }
+  }
+}
+
+.name-file {
+  width: 75%;
+  white-space: nowrap; /* Evita el salto de línea */
+  overflow: hidden; /* Oculta el contenido que se desborda */
+  text-overflow: ellipsis; /* Muestra puntos suspensivos (...) al final del texto desbordado */
+}

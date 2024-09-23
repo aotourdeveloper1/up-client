@@ -1,0 +1,91 @@
+@import "../../../assets/scss/propiedades/color";
+
+.habilitado,
+.baneado {
+  border-radius: 6px;
+  background: #e6faeb;
+  width: 102px;
+  height: 28px;
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+  margin: auto;
+
+  span.habilitado,
+  span.baneado {
+    color: #04ce00;
+    text-align: center;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    cursor: pointer;
+  }
+  span.baneado {
+    color: var(--Principal-Color, #db4403);
+  }
+}
+
+
+.estado-orange,
+.estado-green,
+.estado-yellow,
+.estado-red,
+.estado-gray {
+  background-color: $estado-green;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  min-width: 155px;
+  height: 37px;
+  font-weight: 700;
+  cursor: pointer;
+  position: relative;
+}
+.estado-yellow {
+  background-color: $estado-yellow;
+}
+.estado-red {
+  background-color: $estado-red;
+}
+.estado-gray {
+  background-color: $estado-gray;
+}
+.estado-orange {
+  background-color: $orange-2;
+}
+
+.prioridad-purple,
+.prioridad-blue,
+.prioridad-blue-2,
+.prioridad-gray {
+  background-color: $prioridad-purple;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  min-width: 155px;
+  height: 37px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+
+  position: relative;
+}
+
+.prioridad-gray {
+  background-color: $prioridad-gray;
+}
+
+.prioridad-blue {
+  background-color: $prioridad-blue;
+}
+.prioridad-blue-2 {
+  background-color: $prioridad-blue-2;
+}

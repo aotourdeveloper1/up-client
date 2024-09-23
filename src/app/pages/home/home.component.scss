@@ -404,6 +404,13 @@
   }
 }
 
+.solictar__servicio {
+  position: fixed;
+  right: 22px;
+  bottom: -48px;
+  cursor: pointer;
+}
+
 @media (min-width: 922px) {
   // SECTION 1
   .portada {
@@ -444,7 +451,7 @@
     picture {
       position: absolute;
       img {
-        width: 100%;
+        width: 80%;
         height: 100%;
       }
     }

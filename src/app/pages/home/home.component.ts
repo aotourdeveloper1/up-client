@@ -5,11 +5,17 @@ import { Component, HostListener, OnInit } from '@angular/core';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit{
+export class HomeComponent implements OnInit {
   windowWidth: number = 0;
-  
+  isModalVisible: boolean = false;
+
   ngOnInit(): void {
     this.updateWindowWidth();
+  }
+
+  // Event
+  recibirCierreModal(event: boolean) {
+    this.isModalVisible = event;
   }
 
   // Método que se ejecuta cuando el tamaño de la ventana cambia

@@ -1,0 +1,60 @@
+.contenedor__table {
+  // max-height: 385px;
+  // min-height: 300px;
+  height: 100%;
+  overflow-y: scroll;
+  width: 100%;
+}
+
+table {
+  width: 100%;
+
+  thead {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+
+    tr {
+      width: 100%;
+      border-bottom: 1px solid #ececec;
+      padding: 0px 22px;
+      margin: 0 22px;
+
+      th {
+        min-width: 105px;
+        max-width: 200px;
+        color: var(--Color-4, #bdbdbd);
+        font-family: Poppins;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        padding: 10px 0px;
+      }
+    }
+  }
+
+  tbody {
+    width: 100%;
+    tr {
+      width: 100%;
+      border-bottom: 1px solid #ececec;
+
+      td {
+        padding: 15px 8px;
+        min-width: 59px;
+        margin: 0px 8px;
+        // max-width: 200px;
+        color: var(--Secondary-Color, #232323);
+        font-family: Poppins;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-align: center;
+      }
+    }
+  }
+}

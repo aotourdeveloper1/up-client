@@ -7,7 +7,14 @@ import { Component, HostListener, OnInit } from '@angular/core';
 })
 export class DriveWithUsComponent implements OnInit{
   windowWidth: number = 0;
-  
+
+  isModalVisible: boolean = false;
+
+  // Event
+  recibirCierreModal(event: boolean) {
+    this.isModalVisible = event;
+  }
+
   ngOnInit(): void {
     this.updateWindowWidth();
   }

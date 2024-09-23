@@ -170,11 +170,11 @@
   .ocultar {
     display: inline-block;
   }
-  
+
   .ver {
     display: none;
   }
-  
+
   // SECTION 1
   .portada {
     padding-bottom: 0;
@@ -330,4 +330,11 @@
       }
     }
   }
+}
+
+.solictar__servicio {
+  position: fixed;
+  right: 22px;
+  bottom: -48px;
+  cursor: pointer;
 }

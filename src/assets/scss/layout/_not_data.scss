@@ -1,0 +1,33 @@
+.no__hay-datos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 720px;
+    height: 600px;
+    margin-top: 32px;
+  }
+
+  span {
+    color: #e6e6e6;
+    text-align: center;
+    font-family: Sansation;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+}
+
+
+.contenedor__cotizacion-modal {
+  .no__hay-datos {
+
+    img {
+      width: 500px;
+      height: auto;
+    }
+  }
+}

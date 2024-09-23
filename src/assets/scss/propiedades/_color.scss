@@ -1,0 +1,50 @@
+/* Definición de los colores para usar en la plataforma */
+/*
+Entre el valor sea menor el color tiene una tonalidad mas fuerte
+*/
+/* Color */
+$white: #fff;
+$white-2: #ffeee7;
+$orange: #db4403;
+$orange-2: #e84d0a;
+$black: #232323;
+$green: #2FCC2C;
+$green-2: #35E032;
+
+/* Input */
+$input-fondo: #f9fafb;
+$input-fuente: #bfbfbf;
+
+/* Fondos */
+$orange-background-1: $orange;
+$orange-background-2: $orange-2;
+
+$white-background-1: $white;
+$white-background-2: $white-2;
+
+$green-background-1: $green;
+$green-background-2: $green-2;
+
+
+$gray-background-1: #eaeaea;
+$black-background-1: $black;
+
+/* Titulos y subtitulos */
+$black-title-1: $black;
+$white-title-1: $white;
+$orange-title-1: $orange;
+$gray-title-1: '';
+
+
+/* Modal */
+$estado-green: #00c875;
+$estado-yellow: #fdab3d;
+$estado-red: #e2445c;
+$estado-gray: #c4c4c4;
+
+
+$prioridad-purple: #401694;
+$prioridad-blue: #5559df;
+$prioridad-blue-2: #579bfc;
+$prioridad-gray: #c4c4c4;
+

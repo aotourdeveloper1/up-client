@@ -1,0 +1,562 @@
+<section class="contenedor__cotizacion-modal">
+  <button class="close" (click)="emitirAbrirModalAgregar()">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+    >
+      <path
+        d="M12.6666 4.2735L11.7266 3.3335L7.99992 7.06016L4.27325 3.3335L3.33325 4.2735L7.05992 8.00016L3.33325 11.7268L4.27325 12.6668L7.99992 8.94016L11.7266 12.6668L12.6666 11.7268L8.93992 8.00016L12.6666 4.2735Z"
+        fill="#E04403"
+      />
+    </svg>
+  </button>
+
+  <h2 class="title">Single Trip Requirement</h2>
+
+  <nav>
+    <ul>
+      <li
+        *ngFor="let item of tag"
+        (click)="tagSeleccionadoMet(item)"
+        [ngClass]="tagActivo == item.id ? 'tag-active' : ''"
+      >
+        <picture>
+          <img [src]="item.iconTag" alt="" />
+        </picture>
+        <button type="button">{{ item.nombreTag }}</button>
+      </li>
+    </ul>
+  </nav>
+  <!-- (ngSubmit)="" -->
+  <form
+    class="cont__form"
+    [formGroup]="formServicios"
+    (ngSubmit)="postSolicitudViajesEjecutivos()"
+  >
+    <ng-container *ngIf="tagActivo == 1">
+      <div style="display: flex; justify-content: end">
+        <button class="btn__agregar-green">
+          Subir archivo
+          <input
+            type="file"
+            class="file-input"
+            (change)="onFileChange($event)"
+          />
+          <div class="contenedor__svg">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+            >
+              <path
+                d="M2.75 14C2.28587 14 1.84075 13.8156 1.51256 13.4874C1.18437 13.1592 1 12.7141 1 12.25V9.75C1 9.55109 1.07902 9.36032 1.21967 9.21967C1.36032 9.07902 1.55109 9 1.75 9C1.94891 9 2.13968 9.07902 2.28033 9.21967C2.42098 9.36032 2.5 9.55109 2.5 9.75V12.25C2.5 12.388 2.612 12.5 2.75 12.5H13.25C13.3163 12.5 13.3799 12.4737 13.4268 12.4268C13.4737 12.3799 13.5 12.3163 13.5 12.25V9.75C13.5 9.55109 13.579 9.36032 13.7197 9.21967C13.8603 9.07902 14.0511 9 14.25 9C14.4489 9 14.6397 9.07902 14.7803 9.21967C14.921 9.36032 15 9.55109 15 9.75V12.25C15 12.7141 14.8156 13.1592 14.4874 13.4874C14.1592 13.8156 13.7141 14 13.25 14H2.75Z"
+                fill="white"
+                a
+              />
+              <path
+                d="M7.24953 7.689V2C7.24953 1.80109 7.32855 1.61032 7.4692 1.46967C7.60986 1.32902 7.80062 1.25 7.99953 1.25C8.19845 1.25 8.38921 1.32902 8.52986 1.46967C8.67052 1.61032 8.74953 1.80109 8.74953 2V7.689L10.7195 5.72C10.7891 5.6504 10.8718 5.59519 10.9627 5.55752C11.0536 5.51985 11.1511 5.50047 11.2495 5.50047C11.348 5.50047 11.4454 5.51985 11.5364 5.55752C11.6273 5.59519 11.7099 5.6504 11.7795 5.72C11.8491 5.7896 11.9043 5.87223 11.942 5.96317C11.9797 6.0541 11.9991 6.15157 11.9991 6.25C11.9991 6.34843 11.9797 6.4459 11.942 6.53683C11.9043 6.62777 11.8491 6.7104 11.7795 6.78L8.52953 10.03C8.45997 10.0997 8.37735 10.1549 8.28641 10.1926C8.19547 10.2303 8.09798 10.2498 7.99953 10.2498C7.90108 10.2498 7.8036 10.2303 7.71266 10.1926C7.62171 10.1549 7.5391 10.0997 7.46953 10.03L4.21953 6.78C4.14993 6.7104 4.09472 6.62777 4.05705 6.53683C4.01939 6.4459 4 6.34843 4 6.25C4 6.15157 4.01939 6.0541 4.05705 5.96317C4.09472 5.87223 4.14993 5.7896 4.21953 5.72C4.28913 5.6504 4.37176 5.59519 4.4627 5.55752C4.55364 5.51985 4.6511 5.50047 4.74953 5.50047C4.84796 5.50047 4.94543 5.51985 5.03637 5.55752C5.1273 5.59519 5.20993 5.6504 5.27953 5.72L7.24953 7.689Z"
+                fill="white"
+              />
+            </svg>
+          </div>
+        </button>
+      </div>
+      <h2 class="sub-title" style="margin-top: -7px !important">
+        información del viaje
+      </h2>
+
+      <div class="contenedor__form-input">
+        <div class="contendor__input">
+          <label for="" class="label__title">Cliente</label>
+          <nz-select
+            nzShowSearch="true"
+            formControlName="fk_cliente"
+            nzPlaceHolder="Seleccione un cliente"
+            (ngModelChange)="getConfiguracionCampos()"
+            [nzDisabled]="(clienteSeleccionado != 0)"
+            (nzOnSearch)="searchClient($event)"
+          >
+            <nz-option
+              [nzDisabled]="true"
+              [nzValue]="undefined"
+              nzLabel="Seleccione un cliente"
+            ></nz-option>
+            <nz-option
+              [nzValue]="item.id"
+              [nzLabel]="item.razonsocial"
+              *ngFor="let item of listCentrosCostos"
+            ></nz-option>
+          </nz-select>
+        </div>
+        <div class="contendor__input">
+          <label for="" class="label__title">Ciudad</label>
+          <nz-select nzShowSearch nzAllowClear formControlName="fk_ciudad">
+            <nz-option
+              [nzDisabled]="true"
+              [nzValue]="undefined"
+              nzLabel="Seleccione una ciudad"
+            ></nz-option>
+            <nz-option
+              [nzLabel]="item.nombre"
+              [nzValue]="item.id"
+              *ngFor="let item of listCiudades"
+            ></nz-option>
+          </nz-select>
+        </div>
+        <div class="contendor__input">
+          <label for="" class="label__title">Fecha</label>
+          <nz-date-picker
+            class="input__form"
+            formControlName="fecha_viaje"
+          ></nz-date-picker>
+        </div>
+      </div>
+
+      <div class="contenedor__form-input">
+        <div class="contendor__input">
+          <label for="" class="label__title">Hora</label>
+          <nz-time-picker
+            nzFormat="HH:mm"
+            formControlName="hora_viaje"
+          ></nz-time-picker>
+        </div>
+        <div class="contendor__input">
+          <label for="" class="label__title">Observaciones</label>
+          <input type="text" class="input__form" formControlName="detalles" />
+        </div>
+        <div
+          class="contendor__input"
+          *ngIf="
+            consultConfiguracion.length > 0
+              ? consultConfiguracion[0].exped != 0
+              : false
+          "
+        >
+          <label for="" class="label__title">Expendiente</label>
+          <input
+            type="text"
+            class="input__form"
+            formControlName="centrodecosto"
+          />
+        </div>
+        <div class="contendor__input">
+          <label for="" class="label__title">Vuelo</label>
+          <input type="text" class="input__form" formControlName="vuelo" />
+        </div>
+      </div>
+
+      <div class="contenedor__form-input">
+        <div
+          class="contendor__input"
+          *ngIf="
+            consultConfiguracion.length > 0
+              ? consultConfiguracion[0].campo1
+              : false
+          "
+        >
+          <label for="" class="label__title">{{
+            consultConfiguracion.length > 0
+              ? consultConfiguracion[0].campo1
+              : false
+          }}</label>
+          <input type="text" class="input__form" formControlName="campo1" />
+        </div>
+        <div
+          class="contendor__input"
+          *ngIf="
+            consultConfiguracion.length > 0
+              ? consultConfiguracion[0].campo2
+              : false
+          "
+        >
+          <label for="" class="label__title">{{
+            consultConfiguracion.length > 0
+              ? consultConfiguracion[0].campo2
+              : false
+          }}</label>
+          <input type="text" class="input__form" formControlName="campo2" />
+        </div>
+        <div
+          class="contendor__input"
+          *ngIf="
+            consultConfiguracion.length > 0
+              ? consultConfiguracion[0].campo3
+              : false
+          "
+        >
+          <label for="" class="label__title">{{
+            consultConfiguracion.length > 0
+              ? consultConfiguracion[0].campo3
+              : false
+          }}</label>
+          <input type="text" class="input__form" formControlName="campo3" />
+        </div>
+        <div
+          class="contendor__input"
+          *ngIf="
+            consultConfiguracion.length > 0
+              ? consultConfiguracion[0].campo4
+              : false
+          "
+        >
+          <label for="" class="label__title">{{
+            consultConfiguracion.length > 0
+              ? consultConfiguracion[0].campo4
+              : false
+          }}</label>
+          <input type="text" class="input__form" formControlName="campo4" />
+        </div>
+        <div
+          class="contendor__input"
+          *ngIf="
+            consultConfiguracion.length > 0
+              ? consultConfiguracion[0].campo5
+              : false
+          "
+        >
+          <label for="" class="label__title">{{
+            consultConfiguracion.length > 0
+              ? consultConfiguracion[0].campo5
+              : false
+          }}</label>
+          <input type="text" class="input__form" formControlName="campo5" />
+        </div>
+      </div>
+
+      <div class="contenedor__btn">
+        <button
+          class="btn__orange"
+          type="button"
+          (click)="tagSeleccionadoMet({ id: 2 })"
+        >
+          Siguiente
+        </button>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="tagActivo == 2">
+      <h2 class="sub-title" style="margin-top: -7px !important">
+        Informacion del pasajero
+      </h2>
+      <div class="contenedor__form-input">
+        <div class="contendor__input">
+          <label for="" class="label__title">Nombre del pasajero</label>
+          <input type="text" class="input__form" formControlName="nombre" />
+        </div>
+        <div class="contendor__input">
+          <label for="" class="label__title">Digito</label>
+          <nz-select nzShowSearch nzAllowClear formControlName="indicativo">
+            <nz-option
+              [nzDisabled]="true"
+              [nzValue]="undefined"
+              nzLabel="Seleccione un país"
+            ></nz-option>
+            <nz-option
+              [nzLabel]="item.nombre + '( ' + item.phone_code + ')'"
+              [nzValue]="item.phone_code"
+              *ngFor="let item of listIndicativos"
+            ></nz-option>
+          </nz-select>
+        </div>
+        <div class="contendor__input">
+          <label for="" class="label__title">Celular o telefono</label>
+          <input
+            type="number"
+            (keypress)="
+              ($event.charCode === 8 ||
+              $event.charCode === 0 ||
+              $event.charCode === 13
+                ? null
+                : $event.charCode >= 48 && $event.charCode <= 57)
+            "
+            class="input__form"
+            formControlName="celular"
+          />
+        </div>
+        <div class="contendor__input">
+          <label for="" class="label__title">Email del pasajero</label>
+          <input type="email" class="input__form" formControlName="correo" />
+        </div>
+        <div class="contenedor__btn-acciones">
+          <button class="btn__orange" type="button" (click)="addPasajeros()">
+            {{ editPasajeroItem ? "Editar" : "Agregar" }}
+          </button>
+          <button class="btn__black" (click)="limpiarPasajeros()">
+            Cancelar
+          </button>
+        </div>
+      </div>
+      <ng-container
+        *ngIf="pasajeros.length > 0; then dataMain; else noDataMain"
+      ></ng-container>
+      <ng-template #dataMain>
+        <div
+          class="contenedor__table"
+          [ngStyle]="{ 'max-height': pasajeros.length > 0 ? '300px' : '300px' }"
+        >
+          <table>
+            <thead>
+              <tr>
+                <th>Nombre del pasajero</th>
+                <th>Celular</th>
+                <th>Correo</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                *ngFor="let item of pasajeros"
+                [ngClass]="
+                  editPasajeroItem
+                    ? editPasajeroItem.id == item.id
+                      ? 'celda-select'
+                      : ''
+                    : ''
+                "
+              >
+                <td>{{ item.nombre }}</td>
+                <td>
+                  {{
+                    item.celular
+                      ? "(" + item.indicativo + ")" + " " + item.celular
+                      : "-"
+                  }}
+                </td>
+                <td>{{ item.correo || "-" }}</td>
+                <td
+                  style="
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 12px;
+                  "
+                >
+                  <img
+                    *ngIf="!item.solicitante"
+                    src="../../../../../../../assets/icons/tags/edit.svg"
+                    alt=""
+                    (click)="editPasajero(item)"
+                  />
+                  <svg
+                    style="cursor: pointer"
+                    nz-popconfirm
+                    nzPopconfirmTitle="¿Esta seguro de eliminar al pasajero?"
+                    nzOkText="Aceptar"
+                    nzCancelText="Cancelar"
+                    (nzOnConfirm)="confirm(item.id)"
+                    (nzOnCancel)="cancel()"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-x-lg"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"
+                    />
+                  </svg>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="paginador">
+          <span
+            >Pasajeros:
+            <span>{{
+              pageSize > pasajeros.length ? pasajeros.length : pageSize
+            }}</span
+            >/{{ pasajeros.length }}</span
+          >
+          <mat-paginator
+            [length]="pasajeros.length"
+            [pageSize]="pageSize"
+            [pageSizeOptions]="pageSizeOptions"
+          >
+            <!-- (page)="getListUser()" -->
+          </mat-paginator>
+        </div>
+      </ng-template>
+      <ng-template #noDataMain>
+        <div class="no__hay-datos">
+          <img
+            src="../../../../assets/images/no_data/no_hay_datos_disponibles.png"
+            alt=""
+          />
+          <span>No hay datos disponibles</span>
+        </div>
+      </ng-template>
+
+      <div class="contenedor__btn">
+        <button
+          class="btn__orange"
+          type="button"
+          (click)="tagSeleccionadoMet({ id: 3 })"
+        >
+          Siguiente
+        </button>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="tagActivo == 3">
+      <h2 class="sub-title">Configuración de paradas del viaje</h2>
+      <div class="destinos">
+        <div class="cont__izq">
+          <div
+            cdkDropList
+            class="example-list"
+            (cdkDropListDropped)="drop($event)"
+          >
+            <div class="cont__input">
+              <div
+                *ngFor="let item of destinosList"
+                cdkDrag
+                class="cont__location"
+              >
+                <input
+                  [id]="'pac-input-' + item.id"
+                  class="input__location"
+                  [placeholder]="'Agregar parada'"
+                  autocomplete="off"
+                  (click)="placeInput()"
+                  [value]="item.direccion"
+                />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  class="bi bi-list"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cont__der">
+          <div #mapaElemento id="mapa"></div>
+        </div>
+      </div>
+
+      <div class="contenedor__btn">
+        <button class="btn__orange" type="button" (click)="insertTraslados()">
+          Enviar solicitud de viajes ejecutivos
+        </button>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="tagActivo == 4">
+      <ng-container
+        *ngIf="listOrdenServicio.length > 0; then dataMain; else noDataMain"
+      ></ng-container>
+      <ng-template #dataMain>
+        <div
+          class="contenedor__table"
+          [ngStyle]="{
+            'max-height': listOrdenServicio.length > 0 ? '300px' : '300px'
+          }"
+        >
+          <table>
+            <thead>
+              <tr>
+                <th>Ciudad</th>
+                <th>Detalle</th>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>Destinos</th>
+                <th>Pasajeros</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of listOrdenServicio">
+                <td>{{ item.ciudadName }}</td>
+                <td>{{ item.detalles }}</td>
+                <td>{{ item.fecha }}</td>
+                <td>{{ item.hora }}</td>
+                <td>{{ item.desde + " - " + item.hasta }}</td>
+                <td>{{ getPasajeroTooltip(item.pasajeros) }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="paginador">
+          <span
+            >Orden de servicio:
+            <span>{{
+              pageSize > listOrdenServicio.length
+                ? listOrdenServicio.length
+                : pageSize
+            }}</span
+            >/{{ listOrdenServicio.length }}</span
+          >
+          <mat-paginator
+            [length]="listOrdenServicio.length"
+            [pageSize]="pageSize"
+            [pageSizeOptions]="pageSizeOptions"
+          >
+            <!-- (page)="getListUser()" -->
+          </mat-paginator>
+        </div>
+      </ng-template>
+      <ng-template #noDataMain>
+        <div class="no__hay-datos">
+          <img
+            src="../../../../assets/images/no_data/no_hay_datos_disponibles.png"
+            alt=""
+          />
+          <span>No hay datos disponibles</span>
+        </div>
+      </ng-template>
+      <div class="contenedor__btn">
+        <button
+          class="btn__orange"
+          type="submit"
+          *ngIf="!enviando; else cargandoList"
+        >
+          Crear viajes
+        </button>
+
+        <ng-template #cargandoList>
+          <button
+            class="btn__orange"
+            type="button"
+            style="
+              background-color: #232323;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding: 0 10px;
+              width: 220px;
+            "
+          >
+            <div class="dot-spinner">
+              <div class="dot-spinner__dot"></div>
+              <div class="dot-spinner__dot"></div>
+              <div class="dot-spinner__dot"></div>
+              <div class="dot-spinner__dot"></div>
+              <div class="dot-spinner__dot"></div>
+              <div class="dot-spinner__dot"></div>
+              <div class="dot-spinner__dot"></div>
+              <div class="dot-spinner__dot"></div>
+            </div>
+
+            Creando viajes ...
+          </button>
+        </ng-template>
+      </div>
+    </ng-container>
+  </form>
+</section>

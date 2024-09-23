@@ -126,6 +126,13 @@
   }
 }
 
+.solictar__servicio {
+  position: fixed;
+  right: 22px;
+  bottom: -48px;
+  cursor: pointer;
+}
+
 @media (min-width: 992px) {
   .contactanos {
     padding: 48px 90px;

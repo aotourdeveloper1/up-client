@@ -1,0 +1,202 @@
+@import "../../../../assets/scss/mixin/mixin";
+@import "../../../../assets/scss/propiedades/color";
+
+.contenedor__cotizacion-modal {
+  width: 952px;
+}
+
+.btn__agregar-green {
+  position: relative;
+}
+
+h2.sub-title {
+  margin-top: 28px;
+  font-size: 19px !important;
+  font-weight: 700;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: rgb(219, 68, 3);
+
+  display: flex;
+  gap: 12px;
+}
+
+nav {
+  width: 100%;
+  height: 90px;
+
+  ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    li {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+
+      picture {
+        display: flex;
+      }
+
+      button {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        color: #232323;
+        font-family: Poppins;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+nav {
+  ul {
+    li.tag-active {
+      padding: 0 8px;
+      height: 32px;
+      flex-shrink: 0;
+      border-radius: 8px;
+      background: var(--Principal-Color, #db4403);
+      box-shadow: 0px 7px 14.4px 0px #ffcbb5;
+
+      button {
+        color: #fff;
+        font-weight: 600;
+      }
+
+      picture {
+        img {
+          filter: invert(1) sepia(1) hue-rotate(180deg) brightness(3);
+        }
+      }
+    }
+  }
+}
+
+.contenedor__form-input {
+  @include flex(flex, "", "", end, 12px);
+}
+
+.contenedor__btn-acciones {
+  display: flex;
+  gap: 12px;
+
+  .btn__orange {
+    width: 124.84px;
+    height: 37px;
+  }
+
+  .btn__black {
+    background-color: $black-background-1;
+    width: 124.84px;
+    height: 37px;
+  }
+}
+
+h2.sub-title {
+  margin-top: 28px !important;
+  font-size: 19px !important;
+  font-weight: 700;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: rgb(219, 68, 3);
+}
+
+.destinos {
+  @include flex(flex, "", "", "", 8px);
+
+  .cont__izq {
+    width: 40%;
+    height: 300px;
+    overflow: scroll;
+    @include flex(flex, "", flex-start, "", 6px);
+
+    .cont__input {
+      width: 100%;
+      @include flex(flex, column, "", "", 12px);
+    }
+
+    svg {
+      margin-top: 10px;
+    }
+  }
+  .cont__der {
+    width: 60%;
+    height: 300px;
+    position: relative;
+
+    #mapa {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+    }
+  }
+}
+
+td {
+  min-width: 180px;
+}
+
+.cont__location {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  svg {
+    cursor: all-scroll;
+    margin-top: 0 !important;
+  }
+}
+
+.input__location {
+  box-shadow: 0 0 22px 0 $input-fondo;
+  background: $input-fondo;
+  outline: none;
+  border: none;
+  border-radius: 16px;
+  padding: 12px 16px;
+  width: 100%;
+  height: 39px;
+}
+
+.celda-select {
+  background-color: $white-2;
+}
+
+.example-list {
+  width: 100%;
+  display: flex;
+  gap: 8px;
+}
+
+.contenedor__btn-agregar {
+  justify-content: flex-end;
+}
+
+.contenedor__btn-modal {
+  margin-top: 19px;
+  display: flex;
+  gap: 12px;
+
+  .btn__orange {
+    width: 124.84px;
+    height: 37px;
+  }
+
+  .btn__black {
+    background-color: $black-background-1;
+    width: 124.84px;
+    height: 37px;
+  }
+}

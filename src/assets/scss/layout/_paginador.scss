@@ -1,0 +1,32 @@
+.paginador {
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 22px;
+    width: 100%;
+  
+    span {
+      color: var(--Secondary-Color, #232323);
+  
+      /* Status */
+      font-family: Poppins;
+      font-size: 11px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      letter-spacing: 0.5px;
+  
+      span {
+        color: var(--Secondary-Color, #232323);
+  
+        /* Table/Footer */
+        font-family: Poppins;
+        font-size: 11px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        letter-spacing: 0.6px;
+      }
+    }
+  }

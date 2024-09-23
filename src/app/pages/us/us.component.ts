@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./us.component.scss']
 })
 export class UsComponent {
+  isModalVisible: boolean = false;
 
+  // Event
+  recibirCierreModal(event: boolean) {
+    this.isModalVisible = event;
+  }
 }

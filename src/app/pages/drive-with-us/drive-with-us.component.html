@@ -86,7 +86,7 @@
 </section>
 
 <!-- style="padding-bottom: 295px" -->
-<section class="pasos pasos__orden" style="padding-bottom: 295px"> 
+<section class="pasos pasos__orden" style="padding-bottom: 295px">
     <section class="pasos__der">
         <picture class="pasos__der-content">
             <img class="pasos__content-img" src="../../../assets/images/driver/there.png" alt="">
@@ -113,3 +113,9 @@
 
 <!-- PIE DE PAGINA -->
 <app-footer-page [height]="windowWidth < 927 ? 800 : 660" [isVisibleBanner]="true"></app-footer-page>
+
+<div class="modal" *ngIf="isModalVisible">
+  <app-modal-creacion-ejecutivo (abrirModalAgregar)="recibirCierreModal($event)"></app-modal-creacion-ejecutivo>
+</div>
+
+<img (click)="isModalVisible = !isModalVisible" class="solictar__servicio" src="../../../assets/images/solicitar/solicitar.svg" alt="">

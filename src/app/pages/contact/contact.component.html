@@ -56,3 +56,9 @@
 
 <!-- PIE DE PAGINA -->
 <app-footer-page></app-footer-page>
+
+<div class="modal" *ngIf="isModalVisible">
+  <app-modal-creacion-ejecutivo (abrirModalAgregar)="recibirCierreModal($event)"></app-modal-creacion-ejecutivo>
+</div>
+
+<img (click)="isModalVisible = !isModalVisible" class="solictar__servicio" src="../../../assets/images/solicitar/solicitar.svg" alt="">

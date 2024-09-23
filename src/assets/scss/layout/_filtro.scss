@@ -1,0 +1,106 @@
+@import "../mixin/mixin";
+@import "../propiedades/color";
+
+.filtros {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.filtros__izq {
+    display: flex;
+    gap: 8px;
+}
+
+.busqueda {
+  width: 37px;
+  height: 37px;
+  border-radius: 18px;
+  padding: 8px;
+  background-color: $black-background-1;
+
+  display: grid;
+  place-items: center;
+  position: relative;
+  z-index: 100;
+}
+// FILTROS 
+.filtro {
+  margin-right: 300px;
+}
+
+.filtros__hijos{
+  width: 100%;
+}
+
+.cont__filtro {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: scroll;
+  height: 60px;
+}
+
+.card__select {
+  position: absolute;
+  border-radius: 16px;
+  background: $white-background-1;
+  box-shadow: 0px 17px 33.1px 0px rgba(0, 0, 0, 0.12);
+  width: 296px;
+  flex-shrink: 0;
+  padding: 15px;
+  z-index: 500;
+
+  nav {
+    ul {
+      list-style: none;
+      @include flex(flex, column, "", "", 12px);
+      li {
+        color: $black-title-1;
+        font-family: Poppins;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        @include flex(flex, "", space-between, center, 0);
+        cursor: pointer;
+      }
+
+      li.active {
+        color: #232323;
+        font-family: Sansation;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 140%; /* 33.6px */
+      }
+    }
+  }
+}
+
+.cont__item-filtro {
+  border-radius: 16px;
+  background: #f9fafb;
+  width: 300px;
+  height: 46px;
+  flex-shrink: 0;
+  border: none;
+  outline: none;
+  padding: 0 15px;
+
+  color: #232323;
+  font-family: Sansation;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%; /* 33.6px */
+
+  @include flex(flex, "", space-between, center, 0);
+}
+
+svg {
+    cursor: pointer;
+}
+
