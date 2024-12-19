@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'aotour-web';
+
+  onVideoEnd() {
+    window.location.href = 'https://memuevoconup.com/home'; // Cambia '/next-page' por tu ruta deseada
+  }
 }
